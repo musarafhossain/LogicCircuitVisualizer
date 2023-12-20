@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Logic Circuit Visualizer</title>
+</head>
+<body>
+    <div class="container"> 
+        <div class="gate AND_gate">
+            <h1 class="heading">AND Logic Gate</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="AND_input_1">
+                        <input type="checkbox" id="AND_input_1">
+                        <span></span>
+                    </label>
+                    <label for="AND_input_2">
+                        <input type="checkbox" id="AND_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <line x1="105" y1="54" x2="105" y2="119" stroke="black" stroke-width="4" />
+                        <path d="M 105 55 A 70 25 0 0 1 105 118" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="193" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="AND_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate OR_gate">
+            <h1 class="heading">OR Logic Gate</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="OR_input_1">
+                        <input type="checkbox" id="OR_input_1">
+                        <span></span>
+                    </label>
+                    <label for="OR_input_2">
+                        <input type="checkbox" id="OR_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 119,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 119,103" stroke="black" stroke-width="2" fill="none"/>
+                        <path d="M 105 54 A 15 30 0 0 1 105 119 
+                                 A 110 50 0 0 0 194 86.5 
+                                 A 110 50 0 0 0 105 54 Z" 
+                                 fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="193" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="OR_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate NOT_gate">
+            <h1 class="heading">NOT Logic Gate</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="NOT_input">
+                        <input type="checkbox" id="NOT_input">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="120" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="63" x2="100" y2="63" stroke="black" stroke-width="2" />
+                        <polyline points="100,42 100,82 130,63 100,43" stroke="black" stroke-width="2" fill="yellow"/>
+                        <circle cx="136" cy="63" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="140" y1="63" x2="250" y2="63" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="NOT_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate NOR_gate">
+            <h1 class="heading">NOR Logic Gate</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="NOR_input_1">
+                        <input type="checkbox" id="NOR_input_1">
+                        <span></span>
+                    </label>
+                    <label for="NOR_input_2">
+                        <input type="checkbox" id="NOR_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 119,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 119,103" stroke="black" stroke-width="2" fill="none"/>
+                        <path d="M 105 54 A 15 30 0 0 1 105 119 
+                                 A 110 50 0 0 0 194 86.5 
+                                 A 110 50 0 0 0 105 54 Z" 
+                                 fill="yellow" stroke="black" stroke-width="2"/>
+                        <circle cx="200" cy="86.5" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="NOR_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate NAND_gate">
+            <h1 class="heading">NAND Logic Gate</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="NAND_input_1">
+                        <input type="checkbox" id="NAND_input_1">
+                        <span></span>
+                    </label>
+                    <label for="NAND_input_2">
+                        <input type="checkbox" id="NAND_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <line x1="105" y1="54" x2="105" y2="119" stroke="black" stroke-width="4" />
+                        <path d="M 105 55 A 70 25 0 0 1 105 118" fill="yellow" stroke="black" stroke-width="2"/>
+                        <circle cx="199" cy="86.5" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="204" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="NAND_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate XOR_gate">
+            <h1 class="heading">XOR Logic Gate (Exclusive OR Gate)</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="XOR_input_1">
+                        <input type="checkbox" id="XOR_input_1">
+                        <span></span>
+                    </label>
+                    <label for="XOR_input_2">
+                        <input type="checkbox" id="XOR_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 119,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 119,103" stroke="black" stroke-width="2" fill="none"/>
+                        <path d="M 105 54 A 15 30 0 0 1 105 119 
+                                 A 110 50 0 0 0 194 86.5 
+                                 A 110 50 0 0 0 105 54 Z" 
+                                 fill="yellow" stroke="black" stroke-width="2"/>
+                        <path d="M 95 54 A 15 30 0 0 1 95 119" fill="none" stroke="black" stroke-width="2"/>
+                        <line x1="193" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="XOR_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate XNOR_gate">
+            <h1 class="heading">XNOR Logic Gate (Exclusive NOR Gate)</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="XNOR_input_1">
+                        <input type="checkbox" id="XNOR_input_1">
+                        <span></span>
+                    </label>
+                    <label for="XNOR_input_2">
+                        <input type="checkbox" id="XNOR_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 119,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 119,103" stroke="black" stroke-width="2" fill="none"/>
+                        <path d="M 95 54 A 15 30 0 0 1 95 119" fill="none" stroke="black" stroke-width="2"/>
+                        <path d="M 105 54 A 15 30 0 0 1 105 119 
+                                 A 110 50 0 0 0 194 86.5 
+                                 A 110 50 0 0 0 105 54 Z" 
+                                 fill="yellow" stroke="black" stroke-width="2"/>
+                        <circle cx="200" cy="86.5" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="86.5" x2="250" y2="86.5" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="XNOR_output_led"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate half_adder">
+            <h1 class="heading">Half Adder</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="half_adder_input_1">
+                        <input type="checkbox" id="half_adder_input_1">
+                        <span></span>
+                    </label>
+                    <label for="half_adder_input_2">
+                        <input type="checkbox" id="half_adder_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="105,54 105,119 205,119 205,54 104,54" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="70" x2="235" y2="70" stroke="black" stroke-width="2" />
+                        <polyline points="205,70 235,70 235,60 250,60" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="205,103 235,103 235,113 250,113" stroke="black" stroke-width="2" fill="none"/>
+                        <text x="114" y="90" fill="black" font-size="16" font-weight="bold">Half Adder</text>
+                        <text x="211" y="53" fill="black" font-size="12" font-weight="bold">(Sum)</text>
+                        <text x="208" y="127" fill="black" font-size="12" font-weight="bold">(Carry)</text>
+                        <text x="5" y="60" fill="black" font-size="12" font-weight="bold">A</text>
+                        <text x="5" y="143" fill="black" font-size="12" font-weight="bold">B</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="half_adder_sum_output"></div>
+                    <div class="output_led" id="half_adder_carry_output"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate full_adder">
+            <h1 class="heading">1-bit Full Adder</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="full_adder_input_1">
+                        <input type="checkbox" id="full_adder_input_1">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_2">
+                        <input type="checkbox" id="full_adder_input_2">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_carry_in">
+                        <input type="checkbox" id="full_adder_carry_in">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,7 65,7 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,168 65,168 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <line x1="0" y1="88" x2="105" y2="88" stroke="black" stroke-width="2" />
+                        <polyline points="105,54 105,119 205,119 205,54 104,54" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="70" x2="235" y2="70" stroke="black" stroke-width="2" />
+                        <polyline points="205,70 235,70 235,60 250,60" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="205,103 235,103 235,113 250,113" stroke="black" stroke-width="2" fill="none"/>
+                        <text x="114" y="90" fill="black" font-size="16" font-weight="bold">Full Adder</text>
+                        <text x="211" y="53" fill="black" font-size="12" font-weight="bold">(Sum)</text>
+                        <text x="185" y="135" fill="black" font-size="12" font-weight="bold">(Carry out)</text>
+                        <text x="5" y="160" fill="black" font-size="12" font-weight="bold">(Carry in)</text>
+                        <text x="5" y="20" fill="black" font-size="12" font-weight="bold">A</text>
+                        <text x="5" y="103" fill="black" font-size="12" font-weight="bold">B</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="full_adder_sum_output"></div>
+                    <div class="output_led" id="full_adder_carry_output"></div>
+                </div>
+            </div>
+        </div>
+        <div class="gate 4_bit_full_adder">
+            <h1 class="heading">4-bit Full Adder</h1>
+            <div class="content">
+                <div class="input input_A">
+                    <label for="full_adder_input_A1">
+                        <input type="checkbox" id="full_adder_input_A1">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_A2">
+                        <input type="checkbox" id="full_adder_input_A2">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_A3">
+                        <input type="checkbox" id="full_adder_input_A3">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_A4">
+                        <input type="checkbox" id="full_adder_input_A4">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="input input_B">
+                    <label for="full_adder_input_B1">
+                        <input type="checkbox" id="full_adder_input_B1">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_B2">
+                        <input type="checkbox" id="full_adder_input_B2">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_B3">
+                        <input type="checkbox" id="full_adder_input_B3">
+                        <span></span>
+                    </label>
+                    <label for="full_adder_input_B4">
+                        <input type="checkbox" id="full_adder_input_B4">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="270" width="190" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,17 40,17 40,115.5 55,115.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,257 40,257 40,154.5 55,154.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,97 30,97 30,128.5 55,128.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,178 30,178 30,141.5 55,141.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="55,102.5 55,167.5 145,167.5 145,102.5 54,102.5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <polyline points="145,113.3 160,113.3 160,27 190,27" fill="none" stroke="black" stroke-width="2"/>
+                        <polyline points="145,124.1 175,124.1 175,82 190,82" fill="none" stroke="black" stroke-width="2"/>
+                        <line x1="145" y1="136.9" x2="190" y2="136.9" stroke="black" stroke-width="2" />
+                        <polyline points="145,147.7 175,147.7 175,192 190,192" fill="none" stroke="black" stroke-width="2"/>
+                        <polyline points="145,158.5 160,158.5 160,248 190,248" fill="none" stroke="black" stroke-width="2"/>
+                        <text x="80" y="130" fill="black" font-size="16" font-weight="bold">4-bit</text>
+                        <text x="60" y="150" fill="black" font-size="16" font-weight="bold">Full Adder</text>
+                        <text x="125" y="265" fill="black" font-size="12" font-weight="bold">(Carry out)</text>
+                        <text x="1" y="28" fill="black" font-size="10" font-weight="bold">(A1,B1)</text>
+                        <text x="1" y="93" fill="black" font-size="10" font-weight="bold">(A2,B2)</text>
+                        <text x="1" y="190" fill="black" font-size="10" font-weight="bold">(A3,B3)</text>
+                        <text x="1" y="253" fill="black" font-size="10" font-weight="bold">(A4,B4)</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="full_adder_sum_output_1"></div>
+                    <div class="output_led" id="full_adder_sum_output_2"></div>
+                    <div class="output_led" id="full_adder_sum_output_3"></div>
+                    <div class="output_led" id="full_adder_sum_output_4"></div>
+                    <div class="output_led" id="full_adder_input_4_carry_output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
