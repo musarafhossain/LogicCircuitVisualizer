@@ -389,6 +389,47 @@
     });
 }
 
+//Full Suntractor Functionalities
+{
+    // Variables to store Full Subtractor Input and Carry
+    var FullSubtractorInput1 = false;
+    var FullSubtractorInput2 = false;
+    var FullSubtractorBorrowIn = false;
+    // Function to check Full Suntractor conditions and display output
+    function checkFullSubtractorCondition() {
+        var FullSubtractorDifferenceResult = FullSubtractorInput1^FullSubtractorInput2^FullSubtractorBorrowIn;
+
+        var FullSubtractorBorrowOutResult = ((!FullSubtractorInput1)&&FullSubtractorInput2)||(FullSubtractorBorrowIn&&((!FullSubtractorInput1)||FullSubtractorInput2));
+
+        if (FullSubtractorDifferenceResult) {
+            document.getElementById('full_subtractor_difference_output').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_difference_output').classList.remove('blue-led-on') 
+        }
+        if (FullSubtractorBorrowOutResult) {
+            document.getElementById('full_subtractor_borrow_output').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_borrow_output').classList.remove('blue-led-on') 
+        }
+    }
+    //Event listener for Full Subtractor Input and Carry in
+    //Input 1
+    document.getElementById('full_subtractor_input_1').addEventListener('change', function() {
+        FullSubtractorInput1 = this.checked;
+        checkFullSubtractorCondition();
+    });
+    //Input 2
+    document.getElementById('full_subtractor_input_2').addEventListener('change', function() {
+        FullSubtractorInput2 = this.checked;
+        checkFullSubtractorCondition();
+    });
+    //Carry in
+    document.getElementById('full_subtractor_borrow_in').addEventListener('change', function() {
+        FullSubtractorBorrowIn = this.checked;
+        checkFullSubtractorCondition();
+    });
+}
+
 //initial state
 checkANDCondition();
 checkORCondition();
