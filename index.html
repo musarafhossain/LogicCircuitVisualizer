@@ -348,6 +348,41 @@
                 </div>
             </div>
         </div>
+        <div class="gate half_subtractor">
+            <h1 class="heading">Half Subtractor</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="half_subtractor_input_1">
+                        <input type="checkbox" id="half_subtractor_input_1">
+                        <span></span>
+                    </label>
+                    <label for="half_subtractor_input_2">
+                        <input type="checkbox" id="half_subtractor_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="105,54 105,119 205,119 205,54 104,54" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="70" x2="235" y2="70" stroke="black" stroke-width="2" />
+                        <polyline points="205,70 235,70 235,60 250,60" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="205,103 235,103 235,113 250,113" stroke="black" stroke-width="2" fill="none"/>
+                        <text x="140" y="80" fill="black" font-size="16" font-weight="bold">Half</text>
+                        <text x="115" y="95" fill="black" font-size="16" font-weight="bold">Subtractor</text>
+                        <text x="180" y="47" fill="black" font-size="12" font-weight="bold">(Difference)</text>
+                        <text x="197" y="135" fill="black" font-size="12" font-weight="bold">(Borrow)</text>
+                        <text x="5" y="60" fill="black" font-size="12" font-weight="bold">A</text>
+                        <text x="5" y="143" fill="black" font-size="12" font-weight="bold">B</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="half_subtractor_difference_output"></div>
+                    <div class="output_led" id="half_subtractor_borrow_output"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

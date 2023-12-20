@@ -356,6 +356,39 @@
     });
 }
 
+//Half Subtractor Functionalities
+{
+    // Variables to store Half Subtractor Input
+    var HalfSubtractorInput1 = false;
+    var HalfSubtractorInput2 = false;
+    // Function to check Half Subtractor conditions and display output
+    function checkHalfSubtractorCondition() {
+        var HalfSubtractorDifferenceResult = HalfSubtractorInput1^HalfSubtractorInput2;
+        var HalfSubtractorBorrowResult = (!HalfSubtractorInput1)&&HalfSubtractorInput2;
+        if (HalfSubtractorDifferenceResult) {
+            document.getElementById('half_subtractor_difference_output').classList.add('blue-led-on')
+        } else {
+            document.getElementById('half_subtractor_difference_output').classList.remove('blue-led-on') 
+        }
+        if (HalfSubtractorBorrowResult) {
+            document.getElementById('half_subtractor_borrow_output').classList.add('blue-led-on')
+        } else {
+            document.getElementById('half_subtractor_borrow_output').classList.remove('blue-led-on') 
+        }
+    }
+    //Event listener for Half Subtractor Input
+    //Input 1
+    document.getElementById('half_subtractor_input_1').addEventListener('change', function() {
+        HalfSubtractorInput1 = this.checked;
+        checkHalfSubtractorCondition();
+    });
+    //Input 2
+    document.getElementById('half_subtractor_input_2').addEventListener('change', function() {
+        HalfSubtractorInput2 = this.checked;
+        checkHalfSubtractorCondition();
+    });
+}
+
 //initial state
 checkANDCondition();
 checkORCondition();
