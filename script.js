@@ -399,4 +399,5 @@ checkXORCondition();
 checkXNORCondition();
 checkHalfAdderCondition();
 checkFullAdderCondition();
-check4bitFullAdderCondition(); 
+check4bitFullAdderCondition();
+checkHalfSubtractorCondition();
