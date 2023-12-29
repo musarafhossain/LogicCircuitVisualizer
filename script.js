@@ -423,22 +423,127 @@
         FullSubtractorInput2 = this.checked;
         checkFullSubtractorCondition();
     });
-    //Carry in
+    //Borrow In
     document.getElementById('full_subtractor_borrow_in').addEventListener('change', function() {
         FullSubtractorBorrowIn = this.checked;
         checkFullSubtractorCondition();
     });
 }
 
+//4-bit Full Subtractor Functionalities
+{
+    // Variables to store 4-bit Full Subtractor Input
+    var FullSubtractorInputA1 = false;
+    var FullSubtractorInputA2 = false;
+    var FullSubtractorInputA3 = false;
+    var FullSubtractorInputA4 = false;
+    var FullSubtractorInputB1 = false;
+    var FullSubtractorInputB2 = false;
+    var FullSubtractorInputB3 = false;
+    var FullSubtractorInputB4 = false;
+    var FullSubtractorInput1BorrowIn = false;
+    var FullSubtractorInput2BorrowIn = false;
+    var FullSubtractorInput3BorrowIn = false;
+    var FullSubtractorInput4BorrowIn = false;
+    var FullSubtractorInput4BorrowOut = false;
+    // Function to check 4-bit Full Subtractor conditions and display output
+    function check4bitFullSubtractorCondition() {
+        var FullSubtractorInput1DifferenceResult = (FullSubtractorInputA1^FullSubtractorInputB1)^FullSubtractorInput1BorrowIn;
+        
+        var FullSubtractorInput2BorrowIn = ((!FullSubtractorInputA1)&&FullSubtractorInputB1)||(FullSubtractorInput1BorrowIn&&((!FullSubtractorInputA1)||FullSubtractorInputB1));
+        
+        var FullSubtractorInput2DifferenceResult = (FullSubtractorInputA2^FullSubtractorInputB2)^FullSubtractorInput2BorrowIn;
+        
+        var FullSubtractorInput3BorrowIn = ((!FullSubtractorInputA2)&&FullSubtractorInputB2)||(FullSubtractorInput2BorrowIn&&((!FullSubtractorInputA2)||FullSubtractorInputB2));
+        
+        var FullSubtractorInput3DifferenceResult = (FullSubtractorInputA3^FullSubtractorInputB3)^FullSubtractorInput3BorrowIn;
+        
+        var FullSubtractorInput4BorrowIn = ((!FullSubtractorInputA3)&&FullSubtractorInputB3)||(FullSubtractorInput3BorrowIn&&((!FullSubtractorInputA3)||FullSubtractorInputB3));
+        
+        var FullSubtractorInput4DifferenceResult = (FullSubtractorInputA4^FullSubtractorInputB4)^FullSubtractorInput4BorrowIn;
+        
+        var FullSubtractorInput4BorrowOut = ((!FullSubtractorInputA4)&&FullSubtractorInputB4)||(FullSubtractorInput4BorrowIn&&((!FullSubtractorInputA4)||FullSubtractorInputB4));
+        
+        if (FullSubtractorInput1DifferenceResult) {
+            document.getElementById('full_subtractor_difference_output_1').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_difference_output_1').classList.remove('blue-led-on') 
+        }
+        if (FullSubtractorInput2DifferenceResult) {
+            document.getElementById('full_subtractor_difference_output_2').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_difference_output_2').classList.remove('blue-led-on') 
+        }
+        if (FullSubtractorInput3DifferenceResult) {
+            document.getElementById('full_subtractor_difference_output_3').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_difference_output_3').classList.remove('blue-led-on') 
+        }
+        if (FullSubtractorInput4DifferenceResult) {
+            document.getElementById('full_subtractor_difference_output_4').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_difference_output_4').classList.remove('blue-led-on') 
+        }
+        if (FullSubtractorInput4BorrowOut) {
+            document.getElementById('full_subtractor_input_4_borrow_output').classList.add('blue-led-on')
+        } else {
+            document.getElementById('full_subtractor_input_4_borrow_output').classList.remove('blue-led-on') 
+        }
+    }
+    //Event listener for 4-bit Full Subtractor Input
+    //Input A1
+    document.getElementById('full_subtractor_input_A1').addEventListener('change', function() {
+        FullSubtractorInputA1 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input B1
+    document.getElementById('full_subtractor_input_B1').addEventListener('change', function() {
+        FullSubtractorInputB1 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input A2
+    document.getElementById('full_subtractor_input_A2').addEventListener('change', function() {
+        FullSubtractorInputA2 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input B2
+    document.getElementById('full_subtractor_input_B2').addEventListener('change', function() {
+        FullSubtractorInputB2 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input A3
+    document.getElementById('full_subtractor_input_A3').addEventListener('change', function() {
+        FullSubtractorInputA3 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input B3
+    document.getElementById('full_subtractor_input_B3').addEventListener('change', function() {
+        FullSubtractorInputB3 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input A4
+    document.getElementById('full_subtractor_input_A4').addEventListener('change', function() {
+        FullSubtractorInputA4 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+    //Input B4
+    document.getElementById('full_subtractor_input_B4').addEventListener('change', function() {
+        FullSubtractorInputB4 = this.checked;
+        check4bitFullSubtractorCondition();
+    });
+}
+
 //initial state
-checkANDCondition();
-checkORCondition();
-checkNOTCondition();
-checkNORCondition();
-checkNANDCondition();
-checkXORCondition();
-checkXNORCondition();
-checkHalfAdderCondition();
-checkFullAdderCondition();
-check4bitFullAdderCondition();
-checkHalfSubtractorCondition();
+{
+    checkANDCondition();
+    checkORCondition();
+    checkNOTCondition();
+    checkNORCondition();
+    checkNANDCondition();
+    checkXORCondition();
+    checkXNORCondition();
+    checkHalfAdderCondition();
+    checkFullAdderCondition();
+    check4bitFullAdderCondition();
+    checkHalfSubtractorCondition();
+}
