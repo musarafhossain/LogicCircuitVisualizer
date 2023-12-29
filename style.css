@@ -160,3 +160,59 @@
                 0 0 30px rgb(10, 4, 197),
                 0 0 5px 5px rgba(255, 255, 255, 1);
 }
+/*design for selection line*/
+.gate .selection_line{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.gate .selection_line label{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gate .selection_line label span{
+    width: 100%;
+    height: 100%;
+    background: red;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: inset -2px -5px 1px black,
+    inset 1px -5px 1px black, 
+    3px 5px 5px black;
+}
+.gate .selection_line label span:after{
+    display: block;
+    content: '';
+    width: 35px;
+    height: 25px;
+    border-radius: 100%;
+    margin: 4px auto;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.4) 100%
+    );
+}
+.gate .selection_line label input {
+    appearance: none;
+}
+.gate .selection_line label input:checked + span {
+    background: radial-gradient(
+        circle,
+        rgb(255, 216, 216) 0%,
+        rgb(255, 219, 219) 50%,
+        rgba(231, 3, 3, 0.959) 100%
+    );
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4),
+                0 2px 1px rgba(0, 0, 0, 0.08),
+                0 0 30px rgb(253, 26, 10),
+                0 0 5px 5px rgba(255, 255, 255, 1);
+}

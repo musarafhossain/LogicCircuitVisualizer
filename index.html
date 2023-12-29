@@ -493,6 +493,44 @@
                 </div>
             </div>
         </div>
+        <div class="gate 2x1_multiplexer">
+            <h1 class="heading">2x1 Multiplexer</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="2x1_multiplexer_input_1">
+                        <input type="checkbox" id="2x1_multiplexer_input_1">
+                        <span></span>
+                    </label>
+                    <label for="2x1_multiplexer_input_2">
+                        <input type="checkbox" id="2x1_multiplexer_input_2">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,47 65,47 65,70 105,70" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,128 65,128 65,103 105,103" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="105,54 105,119 205,119 205,54 104,54" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="205" y1="87" x2="250" y2="87" stroke="black" stroke-width="2" />
+                        <text x="140" y="80" fill="black" font-size="16" font-weight="bold">2x1</text>
+                        <text x="112" y="95" fill="black" font-size="16" font-weight="bold">Multiplexer</text>
+                        <text x="5" y="60" fill="black" font-size="12" font-weight="bold">A0</text>
+                        <text x="5" y="143" fill="black" font-size="12" font-weight="bold">A1</text>
+                        <polyline points="115,170 115,119" fill="none" stroke="black" stroke-width="2"/>
+                        <text x="95" y="170" fill="black" font-size="12" font-weight="bold">S0</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="2x1_multiplexer_output"></div>
+                </div>
+            </div>
+            <div class="selection_line">
+                <label for="2x1_multiplexer_selection_line_input_1">
+                    <input type="checkbox" id="2x1_multiplexer_selection_line_input_1">
+                    <span></span>
+                </label>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -443,6 +443,35 @@ function displayResult(result, elementId) {
     });
 }
 
+//2x1 Multiplexer Functionalities
+{
+    // Variables to store 2x1 Multiplexer Input
+    var Multiplexer2x1Input1 = false;
+    var Multiplexer2x1Input2 = false;
+    var Multiplexer2x1SelectionLineInput1 = false;
+    // Function to check 2x1 Multiplexer conditions and display output
+    function check2x1MultiplexerCondition() {
+        var Multiplexer2x1Result = ((!Multiplexer2x1SelectionLineInput1)&&Multiplexer2x1Input1)||(Multiplexer2x1SelectionLineInput1&&Multiplexer2x1Input2);
+        displayResult(Multiplexer2x1Result, '2x1_multiplexer_output')
+    }
+    //Event listener for 2x1 Multiplexer Input
+    //Input 1
+    document.getElementById('2x1_multiplexer_input_1').addEventListener('change', function() {
+        Multiplexer2x1Input1 = this.checked;
+        check2x1MultiplexerCondition();
+    });
+    //Input 2
+    document.getElementById('2x1_multiplexer_input_2').addEventListener('change', function() {
+        Multiplexer2x1Input2 = this.checked;
+        check2x1MultiplexerCondition();
+    });
+    //Selection Line
+    document.getElementById('2x1_multiplexer_selection_line_input_1').addEventListener('change', function() {
+        Multiplexer2x1SelectionLineInput1 = this.checked;
+        check2x1MultiplexerCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();
@@ -456,4 +485,5 @@ function displayResult(result, elementId) {
     checkFullAdderCondition();
     check4bitFullAdderCondition();
     checkHalfSubtractorCondition();
+    check4bitFullSubtractorCondition();
 }
