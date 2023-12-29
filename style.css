@@ -169,6 +169,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 15px;
 }
 .gate .selection_line label{
     width: 60px;

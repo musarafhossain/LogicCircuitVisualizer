@@ -531,6 +531,62 @@
                 </label>
             </div>
         </div>
+        <div class="gate 4x1_multiplexer">
+            <h1 class="heading">4x1 Multiplexer</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="4x1_multiplexer_input_1">
+                        <input type="checkbox" id="4x1_multiplexer_input_1">
+                        <span></span>
+                    </label>
+                    <label for="4x1_multiplexer_input_2">
+                        <input type="checkbox" id="4x1_multiplexer_input_2">
+                        <span></span>
+                    </label>
+                    <label for="4x1_multiplexer_input_3">
+                        <input type="checkbox" id="4x1_multiplexer_input_3">
+                        <span></span>
+                    </label>
+                    <label for="4x1_multiplexer_input_4">
+                        <input type="checkbox" id="4x1_multiplexer_input_4">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="350" width="190" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,57 40,57 40,155.5 55,155.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,297 40,297 40,194.5 55,194.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,137 30,137 30,168.5 55,168.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,217 30,217 30,181.5 55,181.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="55,142.5 55,207.5 145,207.5 145,142.5 54,142.5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="145" y1="175" x2="190" y2="175" stroke="black" stroke-width="2" />
+                        <text x="85" y="170" fill="black" font-size="16" font-weight="bold">4x1</text>
+                        <text x="56" y="190" fill="black" font-size="16" font-weight="bold">Multiplexer</text>
+                        <text x="5" y="50" fill="black" font-size="10" font-weight="bold">A0</text>
+                        <text x="5" y="130" fill="black" font-size="10" font-weight="bold">A1</text>
+                        <text x="5" y="210" fill="black" font-size="10" font-weight="bold">A2</text>
+                        <text x="5" y="290" fill="black" font-size="10" font-weight="bold">A3</text>
+                        <text x="30" y="350" fill="black" font-size="10" font-weight="bold">S1</text>
+                        <text x="108" y="350" fill="black" font-size="10" font-weight="bold">S0</text>
+                        <polyline points="47,350 47,320 67,320 67,207" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="123,350 123,320 103,320 103,207" stroke="black" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="4x1_multiplexer_output"></div>
+                </div>
+            </div>
+            <div class="selection_line">
+                <label for="4x1_multiplexer_selection_line_input_1">
+                    <input type="checkbox" id="4x1_multiplexer_selection_line_input_1">
+                    <span></span>
+                </label>
+                <label for="4x1_multiplexer_selection_line_input_2">
+                    <input type="checkbox" id="4x1_multiplexer_selection_line_input_2">
+                    <span></span>
+                </label>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

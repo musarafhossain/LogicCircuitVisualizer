@@ -472,6 +472,52 @@ function displayResult(result, elementId) {
     });
 }
 
+//4x1 Multiplexer Functionalities
+{
+    // Variables to store 4x1 Multiplexer Input
+    var Multiplexer4x1Input1 = false;
+    var Multiplexer4x1Input2 = false;
+    var Multiplexer4x1Input3 = false;
+    var Multiplexer4x1Input4 = false;
+    var Multiplexer4x1SelectionLineInput1 = false;
+    var Multiplexer4x1SelectionLineInput2 = false;
+    // Function to check 4x1 Multiplexer conditions and display output
+    function check4x1MultiplexerCondition() {
+        var Multiplexer2x1Result = ((!Multiplexer4x1SelectionLineInput1)&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input1)||((!Multiplexer4x1SelectionLineInput1)&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input2)||(Multiplexer4x1SelectionLineInput1&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input3)||(Multiplexer4x1SelectionLineInput1&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input4)
+        displayResult(Multiplexer2x1Result, '4x1_multiplexer_output')
+    }
+    //Event listener for 4x1 Multiplexer Input
+    //Input 1
+    document.getElementById('4x1_multiplexer_input_1').addEventListener('change', function() {
+        Multiplexer4x1Input1 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+    //Input 2
+    document.getElementById('4x1_multiplexer_input_2').addEventListener('change', function() {
+        Multiplexer4x1Input2 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+    //Input 3
+    document.getElementById('4x1_multiplexer_input_3').addEventListener('change', function() {
+        Multiplexer4x1Input3 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+    //Input 4
+    document.getElementById('4x1_multiplexer_input_4').addEventListener('change', function() {
+        Multiplexer4x1Input4 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+    //Selection Line
+    document.getElementById('4x1_multiplexer_selection_line_input_1').addEventListener('change', function() {
+        Multiplexer4x1SelectionLineInput1 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+    document.getElementById('4x1_multiplexer_selection_line_input_2').addEventListener('change', function() {
+        Multiplexer4x1SelectionLineInput2 = this.checked;
+        check4x1MultiplexerCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();
@@ -486,4 +532,5 @@ function displayResult(result, elementId) {
     check4bitFullAdderCondition();
     checkHalfSubtractorCondition();
     check4bitFullSubtractorCondition();
+    check4x1MultiplexerCondition();
 }
