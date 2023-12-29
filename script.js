@@ -483,8 +483,8 @@ function displayResult(result, elementId) {
     var Multiplexer4x1SelectionLineInput2 = false;
     // Function to check 4x1 Multiplexer conditions and display output
     function check4x1MultiplexerCondition() {
-        var Multiplexer2x1Result = ((!Multiplexer4x1SelectionLineInput1)&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input1)||((!Multiplexer4x1SelectionLineInput1)&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input2)||(Multiplexer4x1SelectionLineInput1&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input3)||(Multiplexer4x1SelectionLineInput1&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input4)
-        displayResult(Multiplexer2x1Result, '4x1_multiplexer_output')
+        var Multiplexer4x1Result = ((!Multiplexer4x1SelectionLineInput1)&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input1)||((!Multiplexer4x1SelectionLineInput1)&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input2)||(Multiplexer4x1SelectionLineInput1&&(!Multiplexer4x1SelectionLineInput2)&&Multiplexer4x1Input3)||(Multiplexer4x1SelectionLineInput1&&Multiplexer4x1SelectionLineInput2&&Multiplexer4x1Input4)
+        displayResult(Multiplexer4x1Result, '4x1_multiplexer_output')
     }
     //Event listener for 4x1 Multiplexer Input
     //Input 1
@@ -515,6 +515,81 @@ function displayResult(result, elementId) {
     document.getElementById('4x1_multiplexer_selection_line_input_2').addEventListener('change', function() {
         Multiplexer4x1SelectionLineInput2 = this.checked;
         check4x1MultiplexerCondition();
+    });
+}
+
+//8x1 Multiplexer Functionalities
+{
+    // Variables to store 8x1 Multiplexer Input
+    var Multiplexer8x1Input1 = false;
+    var Multiplexer8x1Input2 = false;
+    var Multiplexer8x1Input3 = false;
+    var Multiplexer8x1Input4 = false;
+    var Multiplexer8x1Input5 = false;
+    var Multiplexer8x1Input6 = false;
+    var Multiplexer8x1Input7 = false;
+    var Multiplexer8x1Input8 = false;
+    var Multiplexer8x1SelectionLineInput1 = false;
+    var Multiplexer8x1SelectionLineInput2 = false;
+    var Multiplexer8x1SelectionLineInput3 = false;
+    // Function to check 8x1 Multiplexer conditions and display output
+    function check8x1MultiplexerCondition() {
+        var Multiplexer8x1Result = ((!Multiplexer8x1SelectionLineInput1)&&(!Multiplexer8x1SelectionLineInput2)&&(!Multiplexer8x1SelectionLineInput3)&&Multiplexer8x1Input1)||((!Multiplexer8x1SelectionLineInput1)&&(!Multiplexer8x1SelectionLineInput2)&&Multiplexer8x1SelectionLineInput3&&Multiplexer8x1Input2)||((!Multiplexer8x1SelectionLineInput1)&&Multiplexer8x1SelectionLineInput2&&(!Multiplexer8x1SelectionLineInput3)&&Multiplexer8x1Input3)||((!Multiplexer8x1SelectionLineInput1)&&Multiplexer8x1SelectionLineInput2&&Multiplexer8x1SelectionLineInput3&&Multiplexer8x1Input4)||(Multiplexer8x1SelectionLineInput1&&(!Multiplexer8x1SelectionLineInput2)&&(!Multiplexer8x1SelectionLineInput3)&&Multiplexer8x1Input5)||(Multiplexer8x1SelectionLineInput1&&(!Multiplexer8x1SelectionLineInput2)&&Multiplexer8x1SelectionLineInput3&&Multiplexer8x1Input6)||(Multiplexer8x1SelectionLineInput1&&Multiplexer8x1SelectionLineInput2&&(!Multiplexer8x1SelectionLineInput3)&&Multiplexer8x1Input7)||(Multiplexer8x1SelectionLineInput1&&Multiplexer8x1SelectionLineInput2&&Multiplexer8x1SelectionLineInput3&&Multiplexer8x1Input8);
+        displayResult(Multiplexer8x1Result, '8x1_multiplexer_output')
+    }
+    //Event listener for 8x1 Multiplexer Input
+    //Input 1
+    document.getElementById('8x1_multiplexer_input_1').addEventListener('change', function() {
+        Multiplexer8x1Input1 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 2
+    document.getElementById('8x1_multiplexer_input_2').addEventListener('change', function() {
+        Multiplexer8x1Input2 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 3
+    document.getElementById('8x1_multiplexer_input_3').addEventListener('change', function() {
+        Multiplexer8x1Input3 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 4
+    document.getElementById('8x1_multiplexer_input_4').addEventListener('change', function() {
+        Multiplexer8x1Input4 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 5
+    document.getElementById('8x1_multiplexer_input_5').addEventListener('change', function() {
+        Multiplexer8x1Input5 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 6
+    document.getElementById('8x1_multiplexer_input_6').addEventListener('change', function() {
+        Multiplexer8x1Input6 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 7
+    document.getElementById('8x1_multiplexer_input_7').addEventListener('change', function() {
+        Multiplexer8x1Input7 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Input 8
+    document.getElementById('8x1_multiplexer_input_8').addEventListener('change', function() {
+        Multiplexer8x1Input8 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    //Selection Line
+    document.getElementById('8x1_multiplexer_selection_line_input_1').addEventListener('change', function() {
+        Multiplexer8x1SelectionLineInput1 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    document.getElementById('8x1_multiplexer_selection_line_input_2').addEventListener('change', function() {
+        Multiplexer8x1SelectionLineInput2 = this.checked;
+        check8x1MultiplexerCondition();
+    });
+    document.getElementById('8x1_multiplexer_selection_line_input_3').addEventListener('change', function() {
+        Multiplexer8x1SelectionLineInput3 = this.checked;
+        check8x1MultiplexerCondition();
     });
 }
 
