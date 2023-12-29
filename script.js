@@ -1,3 +1,13 @@
+// Helper function to display result on the webpage
+function displayResult(result, elementId) {
+    var element = document.getElementById(elementId);
+    if (result) {
+        element.classList.add('blue-led-on');
+    } else {
+        element.classList.remove('blue-led-on');
+    }
+}
+
 //AND Gate Functionalities
 {
     // Variables to store AND Input
@@ -6,11 +16,7 @@
     // Function to check AND conditions and display output
     function checkANDCondition() {
         var ANDresult = ANDInput1&&ANDInput2;
-        if (ANDresult) {
-            document.getElementById('AND_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('AND_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(ANDresult, 'AND_output_led');
     }
     //Event listener for AND Input
     //Input 1
@@ -33,11 +39,7 @@
     // Function to check OR conditions and display output
     function checkORCondition() {
         var ORresult = ORInput1||ORInput2;
-        if (ORresult) {
-            document.getElementById('OR_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('OR_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(ORresult, 'OR_output_led');
     }
     //Event listener for OR Input
     //Input 1
@@ -59,11 +61,7 @@
     // Function to check NOT conditions and display output
     function checkNOTCondition() {
         var NOTresult = !NOTInput;
-        if (NOTresult) {
-            document.getElementById('NOT_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('NOT_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(NOTresult, 'NOT_output_led');
     }
     //Event listener for NOT Input
     //Input
@@ -81,11 +79,7 @@
     // Function to check NOR conditions and display output
     function checkNORCondition() {
         var NORresult = !(NORInput1||NORInput2);
-        if (NORresult) {
-            document.getElementById('NOR_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('NOR_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(NORresult, 'NOR_output_led');
     }
     //Event listener for NOR Input
     //Input 1
@@ -108,11 +102,7 @@
     // Function to check NAND conditions and display output
     function checkNANDCondition() {
         var NANDresult = !(NANDInput1&&NANDInput2);
-        if (NANDresult) {
-            document.getElementById('NAND_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('NAND_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(NANDresult, 'NAND_output_led');
     }
     //Event listener for NAND Input
     //Input 1
@@ -135,11 +125,7 @@
     // Function to check XOR conditions and display output
     function checkXORCondition() {
         var XORresult = XORInput1^XORInput2;
-        if (XORresult) {
-            document.getElementById('XOR_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('XOR_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(XORresult, 'XOR_output_led');
     }
     //Event listener for XOR Input
     //Input 1
@@ -162,11 +148,7 @@
     // Function to check XNOR conditions and display output
     function checkXNORCondition() {
         var XNORresult = !(XNORInput1^XNORInput2);
-        if (XNORresult) {
-            document.getElementById('XNOR_output_led').classList.add('blue-led-on')
-        } else {
-            document.getElementById('XNOR_output_led').classList.remove('blue-led-on') 
-        }
+        displayResult(XNORresult, 'XNOR_output_led');
     }
     //Event listener for XNOR Input
     //Input 1
@@ -190,16 +172,8 @@
     function checkHalfAdderCondition() {
         var HalfAdderSumResult = HalfAdderInput1^HalfAdderInput2;
         var HalfAdderCarryOutResult = HalfAdderInput1&&HalfAdderInput2;
-        if (HalfAdderSumResult) {
-            document.getElementById('half_adder_sum_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('half_adder_sum_output').classList.remove('blue-led-on') 
-        }
-        if (HalfAdderCarryOutResult) {
-            document.getElementById('half_adder_carry_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('half_adder_carry_output').classList.remove('blue-led-on') 
-        }
+        displayResult(HalfAdderSumResult, 'half_adder_sum_output');
+        displayResult(HalfAdderCarryOutResult, 'half_adder_carry_output'); 
     }
     //Event listener for Full Adder Input
     //Input 1
@@ -224,16 +198,8 @@
     function checkFullAdderCondition() {
         var FullAdderSumResult = FullAdderInput1^FullAdderInput2^FullAdderCarryIn;
         var FullAdderCarryOutResult = (FullAdderInput1&&FullAdderInput2)||(FullAdderInput2&&FullAdderCarryIn)||(FullAdderCarryIn&&FullAdderInput1);
-        if (FullAdderSumResult) {
-            document.getElementById('full_adder_sum_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_sum_output').classList.remove('blue-led-on') 
-        }
-        if (FullAdderCarryOutResult) {
-            document.getElementById('full_adder_carry_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_carry_output').classList.remove('blue-led-on') 
-        }
+        displayResult(FullAdderSumResult, 'full_adder_sum_output');
+        displayResult(FullAdderCarryOutResult, 'full_adder_carry_output');
     }
     //Event listener for Full Adder Input an4 Carry in
     //Input 1
@@ -287,31 +253,11 @@
         
         var FullAdderInput4CarryOut = (FullAdderInputA4&&FullAdderInputB4)||(FullAdderInputB4&&FullAdderInput4CarryIn)||(FullAdderInput4CarryIn&&FullAdderInputA4);
         
-        if (FullAdderInput1SumResult) {
-            document.getElementById('full_adder_sum_output_1').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_sum_output_1').classList.remove('blue-led-on') 
-        }
-        if (FullAdderInput2SumResult) {
-            document.getElementById('full_adder_sum_output_2').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_sum_output_2').classList.remove('blue-led-on') 
-        }
-        if (FullAdderInput3SumResult) {
-            document.getElementById('full_adder_sum_output_3').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_sum_output_3').classList.remove('blue-led-on') 
-        }
-        if (FullAdderInput4SumResult) {
-            document.getElementById('full_adder_sum_output_4').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_sum_output_4').classList.remove('blue-led-on') 
-        }
-        if (FullAdderInput4CarryOut) {
-            document.getElementById('full_adder_input_4_carry_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_adder_input_4_carry_output').classList.remove('blue-led-on') 
-        }
+        displayResult(FullAdderInput1SumResult, 'full_adder_sum_output_1');
+        displayResult(FullAdderInput2SumResult, 'full_adder_sum_output_2');
+        displayResult(FullAdderInput3SumResult, 'full_adder_sum_output_3');
+        displayResult(FullAdderInput4SumResult, 'full_adder_sum_output_4');
+        displayResult(FullAdderInput4CarryOut, 'full_adder_input_4_carry_output');
     }
     //Event listener for 4-bit Full Adder Input
     //Input A1
@@ -365,16 +311,8 @@
     function checkHalfSubtractorCondition() {
         var HalfSubtractorDifferenceResult = HalfSubtractorInput1^HalfSubtractorInput2;
         var HalfSubtractorBorrowResult = (!HalfSubtractorInput1)&&HalfSubtractorInput2;
-        if (HalfSubtractorDifferenceResult) {
-            document.getElementById('half_subtractor_difference_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('half_subtractor_difference_output').classList.remove('blue-led-on') 
-        }
-        if (HalfSubtractorBorrowResult) {
-            document.getElementById('half_subtractor_borrow_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('half_subtractor_borrow_output').classList.remove('blue-led-on') 
-        }
+        displayResult(HalfSubtractorDifferenceResult, 'half_subtractor_difference_output')
+        displayResult(HalfSubtractorBorrowResult, 'half_subtractor_borrow_output');
     }
     //Event listener for Half Subtractor Input
     //Input 1
@@ -401,16 +339,8 @@
 
         var FullSubtractorBorrowOutResult = ((!FullSubtractorInput1)&&FullSubtractorInput2)||(FullSubtractorBorrowIn&&((!FullSubtractorInput1)||FullSubtractorInput2));
 
-        if (FullSubtractorDifferenceResult) {
-            document.getElementById('full_subtractor_difference_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_difference_output').classList.remove('blue-led-on') 
-        }
-        if (FullSubtractorBorrowOutResult) {
-            document.getElementById('full_subtractor_borrow_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_borrow_output').classList.remove('blue-led-on') 
-        }
+        displayResult(FullSubtractorDifferenceResult, 'full_subtractor_difference_output');
+        displayResult(FullSubtractorBorrowOutResult, 'full_subtractor_borrow_output');
     }
     //Event listener for Full Subtractor Input and Carry in
     //Input 1
@@ -464,31 +394,11 @@
         
         var FullSubtractorInput4BorrowOut = ((!FullSubtractorInputA4)&&FullSubtractorInputB4)||(FullSubtractorInput4BorrowIn&&((!FullSubtractorInputA4)||FullSubtractorInputB4));
         
-        if (FullSubtractorInput1DifferenceResult) {
-            document.getElementById('full_subtractor_difference_output_1').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_difference_output_1').classList.remove('blue-led-on') 
-        }
-        if (FullSubtractorInput2DifferenceResult) {
-            document.getElementById('full_subtractor_difference_output_2').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_difference_output_2').classList.remove('blue-led-on') 
-        }
-        if (FullSubtractorInput3DifferenceResult) {
-            document.getElementById('full_subtractor_difference_output_3').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_difference_output_3').classList.remove('blue-led-on') 
-        }
-        if (FullSubtractorInput4DifferenceResult) {
-            document.getElementById('full_subtractor_difference_output_4').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_difference_output_4').classList.remove('blue-led-on') 
-        }
-        if (FullSubtractorInput4BorrowOut) {
-            document.getElementById('full_subtractor_input_4_borrow_output').classList.add('blue-led-on')
-        } else {
-            document.getElementById('full_subtractor_input_4_borrow_output').classList.remove('blue-led-on') 
-        }
+        displayResult(FullSubtractorInput1DifferenceResult, 'full_subtractor_difference_output_1');
+        displayResult(FullSubtractorInput2DifferenceResult, 'full_subtractor_difference_output_2');
+        displayResult(FullSubtractorInput3DifferenceResult, 'full_subtractor_difference_output_3');
+        displayResult(FullSubtractorInput4DifferenceResult, 'full_subtractor_difference_output_4');
+        displayResult(FullSubtractorInput4BorrowOut, 'full_subtractor_input_4_borrow_output');
     }
     //Event listener for 4-bit Full Subtractor Input
     //Input A1
