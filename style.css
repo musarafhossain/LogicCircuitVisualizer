@@ -181,7 +181,7 @@
 .gate .selection_line label span{
     width: 100%;
     height: 100%;
-    background: red;
+    background: green;
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: inset -2px -5px 1px black,
@@ -208,12 +208,12 @@
 .gate .selection_line label input:checked + span {
     background: radial-gradient(
         circle,
-        rgb(255, 216, 216) 0%,
-        rgb(255, 219, 219) 50%,
-        rgba(231, 3, 3, 0.959) 100%
+        rgb(216, 255, 216) 0%,
+        rgb(219, 255, 219) 50%,
+        rgba(3, 231, 3, 0.959) 100%
     );
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4),
                 0 2px 1px rgba(0, 0, 0, 0.08),
-                0 0 30px rgb(253, 26, 10),
+                0 0 30px rgb(16, 253, 10),
                 0 0 5px 5px rgba(255, 255, 255, 1);
 }
