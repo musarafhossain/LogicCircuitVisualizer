@@ -632,5 +632,8 @@ function displayResult(result, elementId) {
     check4bitFullAdderCondition();
     checkHalfSubtractorCondition();
     check4bitFullSubtractorCondition();
+    check2x1MultiplexerCondition();
     check4x1MultiplexerCondition();
+    check8x1MultiplexerCondition();
+    check1x2DeMultiplexerCondition();
 }
