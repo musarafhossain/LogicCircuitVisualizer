@@ -507,11 +507,12 @@ function displayResult(result, elementId) {
         Multiplexer4x1Input4 = this.checked;
         check4x1MultiplexerCondition();
     });
-    //Selection Line
+    //Selection Line 1
     document.getElementById('4x1_multiplexer_selection_line_input_1').addEventListener('change', function() {
         Multiplexer4x1SelectionLineInput1 = this.checked;
         check4x1MultiplexerCondition();
     });
+    //Selection Line 2
     document.getElementById('4x1_multiplexer_selection_line_input_2').addEventListener('change', function() {
         Multiplexer4x1SelectionLineInput2 = this.checked;
         check4x1MultiplexerCondition();
@@ -615,6 +616,41 @@ function displayResult(result, elementId) {
     document.getElementById('1x2_demultiplexer_selection_line_input_1').addEventListener('change', function() {
         DeMultiplexer1x2SelectionLineInput1 = this.checked;
         check1x2DeMultiplexerCondition();
+    });
+}
+
+//1x4 De-Multiplexer Functionalities
+{
+    // Variables to store 1x4 De-Multiplexer Input
+    var DeMultiplexer1x4Input1 = false;
+    var DeMultiplexer1x4SelectionLineInput0 = false;
+    var DeMultiplexer1x4SelectionLineInput1 = false;
+    // Function to check 1x4 De-Multiplexer conditions and display output
+    function check1x4DeMultiplexerCondition() {
+        var DeMultiplexer1x4Result0 = (!DeMultiplexer1x4SelectionLineInput1)&&(!DeMultiplexer1x4SelectionLineInput0)&&DeMultiplexer1x4Input1;
+        var DeMultiplexer1x4Result1 = (!DeMultiplexer1x4SelectionLineInput1)&&DeMultiplexer1x4SelectionLineInput0&&DeMultiplexer1x4Input1;
+        var DeMultiplexer1x4Result2 = DeMultiplexer1x4SelectionLineInput1&&(!DeMultiplexer1x4SelectionLineInput0)&&DeMultiplexer1x4Input1;
+        var DeMultiplexer1x4Result3 = DeMultiplexer1x4SelectionLineInput1&&DeMultiplexer1x4SelectionLineInput0&&DeMultiplexer1x4Input1;
+        displayResult(DeMultiplexer1x4Result0, '1x4_demultiplexer_output_0')
+        displayResult(DeMultiplexer1x4Result1, '1x4_demultiplexer_output_1')
+        displayResult(DeMultiplexer1x4Result2, '1x4_demultiplexer_output_2')
+        displayResult(DeMultiplexer1x4Result3, '1x4_demultiplexer_output_3')
+    }
+    //Event listener for 1x4 DeMultiplexer Input
+    //Input 1
+    document.getElementById('1x4_demultiplexer_input_1').addEventListener('change', function() {
+        DeMultiplexer1x4Input1 = this.checked;
+        check1x4DeMultiplexerCondition();
+    });
+    //Selection Line 1
+    document.getElementById('1x4_demultiplexer_selection_line_input_1').addEventListener('change', function() {
+        DeMultiplexer1x4SelectionLineInput1 = this.checked;
+        check1x4DeMultiplexerCondition();
+    });
+    //Selection Line 2
+    document.getElementById('1x4_demultiplexer_selection_line_input_0').addEventListener('change', function() {
+        DeMultiplexer1x4SelectionLineInput0 = this.checked;
+        check1x4DeMultiplexerCondition();
     });
 }
 

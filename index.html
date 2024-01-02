@@ -709,6 +709,53 @@
                 </label>
             </div>
         </div>
+        <div class="gate 1x4_demultiplexer">
+            <h1 class="heading">1x4 De-Multiplexer</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="1x4_demultiplexer_input_1">
+                        <input type="checkbox" id="1x4_demultiplexer_input_1">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="350" width="190" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="190,95 160,95 160,155.5 145,155.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="190,260 160,260 160,194.5 145,194.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="190,150 170,150 170,168.5 145,168.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="190,205 170,205 170,181.5 145,181.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="55,142.5 55,207.5 145,207.5 145,142.5 54,142.5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <line x1="0" y1="175" x2="55" y2="175" stroke="black" stroke-width="2" />
+                        <text x="85" y="170" fill="black" font-size="16" font-weight="bold">4x1</text>
+                        <text x="56" y="190" fill="black" font-size="16" font-weight="bold">Multiplexer</text>
+                        <text x="175" y="275" fill="black" font-size="10" font-weight="bold">Y0</text>
+                        <text x="175" y="220" fill="black" font-size="10" font-weight="bold">Y1</text>
+                        <text x="175" y="165" fill="black" font-size="10" font-weight="bold">Y2</text>
+                        <text x="175" y="110" fill="black" font-size="10" font-weight="bold">Y3</text>
+                        <text x="30" y="345" fill="black" font-size="10" font-weight="bold">S1</text>
+                        <text x="108" y="345" fill="black" font-size="10" font-weight="bold">S0</text>
+                        <polyline points="47,350 47,320 67,320 67,207" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="123,350 123,320 103,320 103,207" stroke="black" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="1x4_demultiplexer_output_3"></div>
+                    <div class="output_led" id="1x4_demultiplexer_output_2"></div>
+                    <div class="output_led" id="1x4_demultiplexer_output_1"></div>
+                    <div class="output_led" id="1x4_demultiplexer_output_0"></div>
+                </div>
+            </div>
+            <div class="selection_line">
+                <label for="1x4_demultiplexer_selection_line_input_1">
+                    <input type="checkbox" id="1x4_demultiplexer_selection_line_input_1">
+                    <span></span>
+                </label>
+                <label for="1x4_demultiplexer_selection_line_input_0">
+                    <input type="checkbox" id="1x4_demultiplexer_selection_line_input_0">
+                    <span></span>
+                </label>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
