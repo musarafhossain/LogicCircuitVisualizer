@@ -593,6 +593,31 @@ function displayResult(result, elementId) {
     });
 }
 
+//1x2 De-Multiplexer Functionalities
+{
+    // Variables to store 1x2 De-Multiplexer Input
+    var DeMultiplexer1x2Input1 = false;
+    var DeMultiplexer1x2SelectionLineInput1 = false;
+    // Function to check 1x2 De-Multiplexer conditions and display output
+    function check1x2DeMultiplexerCondition() {
+        var DeMultiplexer1x2Result1 = DeMultiplexer1x2SelectionLineInput1&&DeMultiplexer1x2Input1;
+        var DeMultiplexer1x2Result2 = (!DeMultiplexer1x2SelectionLineInput1)&&DeMultiplexer1x2Input1;
+        displayResult(DeMultiplexer1x2Result1, '1x2_demultiplexer_output_1')
+        displayResult(DeMultiplexer1x2Result2, '1x2_demultiplexer_output_2')
+    }
+    //Event listener for 1x2 DeMultiplexer Input
+    //Input 1
+    document.getElementById('1x2_demultiplexer_input_1').addEventListener('change', function() {
+        DeMultiplexer1x2Input1 = this.checked;
+        check1x2DeMultiplexerCondition();
+    });
+    //Selection Line
+    document.getElementById('1x2_demultiplexer_selection_line_input_1').addEventListener('change', function() {
+        DeMultiplexer1x2SelectionLineInput1 = this.checked;
+        check1x2DeMultiplexerCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();

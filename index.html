@@ -673,6 +673,42 @@
                 </label>
             </div>
         </div>
+        <div class="gate 1x2_demultiplexer">
+            <h1 class="heading">1x2 De-Multiplexer</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="1x2_demultiplexer_input_1">
+                        <input type="checkbox" id="1x2_demultiplexer_input_1">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="170" width="250" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="87" x2="105" y2="87" stroke="black" stroke-width="2" />
+                        <polyline points="105,54 105,119 205,119 205,54 104,54" fill="yellow" stroke="black" stroke-width="2"/>
+                        <polyline points="205,75.6 230,75.6 230,60 250,60" fill="none" stroke="black" stroke-width="2"/>
+                        <polyline points="205,97.2 230,97.2 230,115 250,115" fill="none" stroke="black" stroke-width="2"/>
+                        <text x="127" y="80" fill="black" font-size="16" font-weight="bold">2x1 De-</text>
+                        <text x="112" y="95" fill="black" font-size="16" font-weight="bold">Multiplexer</text>
+                        <text x="5" y="80" fill="black" font-size="12" font-weight="bold">A</text>
+                        <line x1="115" y1="170" x2="115" y2="119" stroke="black" stroke-width="2" />
+                        <text x="95" y="170" fill="black" font-size="12" font-weight="bold">S0</text>
+                        <text x="230" y="130" fill="black" font-size="12" font-weight="bold">Y0</text>
+                        <text x="230" y="55" fill="black" font-size="12" font-weight="bold">Y1</text>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="1x2_demultiplexer_output_1"></div>
+                    <div class="output_led" id="1x2_demultiplexer_output_2"></div>
+                </div>
+            </div>
+            <div class="selection_line">
+                <label for="1x2_demultiplexer_selection_line_input_1">
+                    <input type="checkbox" id="1x2_demultiplexer_selection_line_input_1">
+                    <span></span>
+                </label>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
