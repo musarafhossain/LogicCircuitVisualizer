@@ -654,6 +654,55 @@ function displayResult(result, elementId) {
     });
 }
 
+//1x8 De-Multiplexer Functionalities
+{
+    // Variables to store 1x8 De-Multiplexer Input
+    var DeMultiplexer1x8Input1 = false;
+    var DeMultiplexer1x8SelectionLineInput0 = false;
+    var DeMultiplexer1x8SelectionLineInput1 = false;
+    var DeMultiplexer1x8SelectionLineInput2 = false;
+    // Function to check 1x8 De-Multiplexer conditions and display output
+    function check1x8DeMultiplexerCondition() {
+        var DeMultiplexer1x8Result0 = (!DeMultiplexer1x8SelectionLineInput2)&&(!DeMultiplexer1x8SelectionLineInput1)&&(!DeMultiplexer1x8SelectionLineInput0)&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result1 = (!DeMultiplexer1x8SelectionLineInput2)&&(!DeMultiplexer1x8SelectionLineInput1)&&DeMultiplexer1x8SelectionLineInput0&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result2 = (!DeMultiplexer1x8SelectionLineInput2)&&DeMultiplexer1x8SelectionLineInput1&&(!DeMultiplexer1x8SelectionLineInput0)&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result3 = (!DeMultiplexer1x8SelectionLineInput2)&&DeMultiplexer1x8SelectionLineInput1&&DeMultiplexer1x8SelectionLineInput0&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result4 = DeMultiplexer1x8SelectionLineInput2&&(!DeMultiplexer1x8SelectionLineInput1)&&(!DeMultiplexer1x8SelectionLineInput0)&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result5 = DeMultiplexer1x8SelectionLineInput2&&(!DeMultiplexer1x8SelectionLineInput1)&&DeMultiplexer1x8SelectionLineInput0&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result6 = DeMultiplexer1x8SelectionLineInput2&&DeMultiplexer1x8SelectionLineInput1&&(!DeMultiplexer1x8SelectionLineInput0)&&DeMultiplexer1x8Input1;
+        var DeMultiplexer1x8Result7 = DeMultiplexer1x8SelectionLineInput2&&DeMultiplexer1x8SelectionLineInput1&&DeMultiplexer1x8SelectionLineInput0&&DeMultiplexer1x8Input1;
+        displayResult(DeMultiplexer1x8Result0, '1x8_demultiplexer_output_0')
+        displayResult(DeMultiplexer1x8Result1, '1x8_demultiplexer_output_1')
+        displayResult(DeMultiplexer1x8Result2, '1x8_demultiplexer_output_2')
+        displayResult(DeMultiplexer1x8Result3, '1x8_demultiplexer_output_3')
+        displayResult(DeMultiplexer1x8Result4, '1x8_demultiplexer_output_4')
+        displayResult(DeMultiplexer1x8Result5, '1x8_demultiplexer_output_5')
+        displayResult(DeMultiplexer1x8Result6, '1x8_demultiplexer_output_6')
+        displayResult(DeMultiplexer1x8Result7, '1x8_demultiplexer_output_7')
+    }
+    //Event listener for 1x8 DeMultiplexer Input
+    //Input 1
+    document.getElementById('1x8_demultiplexer_input_1').addEventListener('change', function() {
+        DeMultiplexer1x8Input1 = this.checked;
+        check1x8DeMultiplexerCondition();
+    });
+    //Selection Line 1
+    document.getElementById('1x8_demultiplexer_selection_line_input_2').addEventListener('change', function() {
+        DeMultiplexer1x8SelectionLineInput2 = this.checked;
+        check1x8DeMultiplexerCondition();
+    });
+    //Selection Line 2
+    document.getElementById('1x8_demultiplexer_selection_line_input_1').addEventListener('change', function() {
+        DeMultiplexer1x8SelectionLineInput1 = this.checked;
+        check1x8DeMultiplexerCondition();
+    });
+    //Selection Line 3
+    document.getElementById('1x8_demultiplexer_selection_line_input_0').addEventListener('change', function() {
+        DeMultiplexer1x8SelectionLineInput0 = this.checked;
+        check1x8DeMultiplexerCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();
@@ -672,4 +721,6 @@ function displayResult(result, elementId) {
     check4x1MultiplexerCondition();
     check8x1MultiplexerCondition();
     check1x2DeMultiplexerCondition();
+    check1x4DeMultiplexerCondition();
+    check1x8DeMultiplexerCondition();
 }
