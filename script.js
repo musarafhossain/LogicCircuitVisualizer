@@ -703,6 +703,43 @@ function displayResult(result, elementId) {
     });
 }
 
+//4 to 2 Encoder Functionalities
+{
+    // Variables to store 4 to 2 Encoder Input
+    var Encoder4to2Input0 = false;
+    var Encoder4to2Input1 = false;
+    var Encoder4to2Input2 = false;
+    var Encoder4to2Input3 = false;
+    // Function to check 4 to 2 Encoder conditions and display output
+    function check4to2EncoderCondition() {
+        var Encoder4to2Result1 = Encoder4to2Input2||Encoder4to2Input3;
+        var Encoder4to2Result0 = Encoder4to2Input1||Encoder4to2Input3;
+        displayResult(Encoder4to2Result1, '4to2_encoder_output_1');
+        displayResult(Encoder4to2Result0, '4to2_encoder_output_0');
+    }
+    //Event listener for 4 to 2 Encoder Input
+    //Input 1
+    document.getElementById('4to2_encoder_input_0').addEventListener('change', function() {
+        Encoder4to2Input0 = this.checked;
+        check4to2EncoderCondition();
+    });
+    //Input 2
+    document.getElementById('4to2_encoder_input_1').addEventListener('change', function() {
+        Encoder4to2Input1 = this.checked;
+        check4to2EncoderCondition();
+    });
+    //Input 3
+    document.getElementById('4to2_encoder_input_2').addEventListener('change', function() {
+        Encoder4to2Input2 = this.checked;
+        check4to2EncoderCondition();
+    });
+    //Input 4
+    document.getElementById('4to2_encoder_input_3').addEventListener('change', function() {
+        Encoder4to2Input3 = this.checked;
+        check4to2EncoderCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();
@@ -723,4 +760,5 @@ function displayResult(result, elementId) {
     check1x2DeMultiplexerCondition();
     check1x4DeMultiplexerCondition();
     check1x8DeMultiplexerCondition();
+    check4to2EncoderCondition();
 }

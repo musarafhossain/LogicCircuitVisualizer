@@ -846,6 +846,52 @@
                 </label>
             </div>
         </div>
+        <div class="gate 4to2_encoder">
+            <h1 class="heading">4 to 2 Encoder</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="4to2_encoder_input_3">
+                        <input type="checkbox" id="4to2_encoder_input_3">
+                        <span></span>
+                    </label>
+                    <label for="4to2_encoder_input_2">
+                        <input type="checkbox" id="4to2_encoder_input_2">
+                        <span></span>
+                    </label>
+                    <label for="4to2_encoder_input_1">
+                        <input type="checkbox" id="4to2_encoder_input_1">
+                        <span></span>
+                    </label>
+                    <label for="4to2_encoder_input_0">
+                        <input type="checkbox" id="4to2_encoder_input_0">
+                        <span></span>
+                    </label>
+                </div>
+                <div class="logic_gate">
+                    <svg height="350" width="190" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="0,57 40,57 40,155.5 55,155.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,297 40,297 40,194.5 55,194.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,137 30,137 30,168.5 55,168.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="0,217 30,217 30,181.5 55,181.5" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="55,142.5 55,207.5 145,207.5 145,142.5 54,142.5" fill="yellow" stroke="black" stroke-width="2"/>
+                        <text x="75" y="170" fill="black" font-size="16" font-weight="bold">4 to 2</text>
+                        <text x="70" y="190" fill="black" font-size="16" font-weight="bold">Encoder</text>
+                        <text x="5" y="50" fill="black" font-size="10" font-weight="bold">Y3</text>
+                        <text x="5" y="130" fill="black" font-size="10" font-weight="bold">Y2</text>
+                        <text x="5" y="210" fill="black" font-size="10" font-weight="bold">Y1</text>
+                        <text x="5" y="290" fill="black" font-size="10" font-weight="bold">Y0</text>
+                        <text x="175" y="145" fill="black" font-size="10" font-weight="bold">A1</text>
+                        <text x="175" y="200" fill="black" font-size="10" font-weight="bold">A0</text>
+                        <polyline points="145,161.1 170,161.5 170,150 190,150" stroke="black" stroke-width="2" fill="none"/>
+                        <polyline points="145,185.8 170,185.8 170,205 190,205" stroke="black" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <div class="output">
+                    <div class="output_led" id="4to2_encoder_output_1"></div>
+                    <div class="output_led" id="4to2_encoder_output_0"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
