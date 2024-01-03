@@ -740,6 +740,69 @@ function displayResult(result, elementId) {
     });
 }
 
+//8 to 3 Encoder Functionalities
+{
+    // Variables to store 8 to 3 Encoder Input
+    var Encoder8to3Input0 = false;
+    var Encoder8to3Input1 = false;
+    var Encoder8to3Input2 = false;
+    var Encoder8to3Input3 = false;
+    var Encoder8to3Input4 = false;
+    var Encoder8to3Input5 = false;
+    var Encoder8to3Input6 = false;
+    var Encoder8to3Input7 = false;
+    // Function to check 8 to 3 Encoder conditions and display output
+    function check8to3EncoderCondition() {
+        var Encoder8to3Result2 = Encoder8to3Input4||Encoder8to3Input5||Encoder8to3Input6||Encoder8to3Input7;
+        var Encoder8to3Result1 = Encoder8to3Input2||Encoder8to3Input3||Encoder8to3Input6||Encoder8to3Input7;
+        var Encoder8to3Result0 = Encoder8to3Input1||Encoder8to3Input3||Encoder8to3Input5||Encoder8to3Input7;
+        displayResult(Encoder8to3Result2, '8to3_encoder_output_2');
+        displayResult(Encoder8to3Result1, '8to3_encoder_output_1');
+        displayResult(Encoder8to3Result0, '8to3_encoder_output_0');
+    }
+    //Event listener for 8 to 3 Encoder Input
+    //Input 1
+    document.getElementById('8to3_encoder_input_0').addEventListener('change', function() {
+        Encoder8to3Input0 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 2
+    document.getElementById('8to3_encoder_input_1').addEventListener('change', function() {
+        Encoder8to3Input1 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 3
+    document.getElementById('8to3_encoder_input_2').addEventListener('change', function() {
+        Encoder8to3Input2 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 4
+    document.getElementById('8to3_encoder_input_3').addEventListener('change', function() {
+        Encoder8to3Input3 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 5
+    document.getElementById('8to3_encoder_input_4').addEventListener('change', function() {
+        Encoder8to3Input4 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 6
+    document.getElementById('8to3_encoder_input_5').addEventListener('change', function() {
+        Encoder8to3Input5 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 7
+    document.getElementById('8to3_encoder_input_6').addEventListener('change', function() {
+        Encoder8to3Input6 = this.checked;
+        check8to3EncoderCondition();
+    });
+    //Input 8
+    document.getElementById('8to3_encoder_input_7').addEventListener('change', function() {
+        Encoder8to3Input7 = this.checked;
+        check8to3EncoderCondition();
+    });
+}
+
 //initial state
 {
     checkANDCondition();
@@ -761,4 +824,5 @@ function displayResult(result, elementId) {
     check1x4DeMultiplexerCondition();
     check1x8DeMultiplexerCondition();
     check4to2EncoderCondition();
+    check8to3EncoderCondition();
 }
