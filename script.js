@@ -24,7 +24,7 @@
         check1x8DeMultiplexerCondition();
         check4to2EncoderCondition();
         check8to3EncoderCondition();
-
+        check2to4DecoderCondition();
     });
 }
 
@@ -830,5 +830,40 @@ function displayResult(result, elementId) {
     document.getElementById('8to3_encoder_input_7').addEventListener('change', function() {
         Encoder8to3Input7 = this.checked;
         check8to3EncoderCondition();
+    });
+}
+
+//2 to 4 Decoder Functionalities
+{
+    // Variables to store 2 to 4 Decoder Input
+    var Decoder2to4Input0 = false;
+    var Decoder2to4Input1 = false;
+    var Decoder2to4Enable = false;
+    // Function to check 2 to 4 Decoder conditions and display output
+    function check2to4DecoderCondition() {
+        var Decoder2to4Result3 = Decoder2to4Input1&&Decoder2to4Input0&&Decoder2to4Enable;
+        var Decoder2to4Result2 = (!Decoder2to4Input1)&&Decoder2to4Input0&&Decoder2to4Enable;
+        var Decoder2to4Result1 = Decoder2to4Input1&&(!Decoder2to4Input0)&&Decoder2to4Enable;
+        var Decoder2to4Result0 = (!Decoder2to4Input1)&&(!Decoder2to4Input0)&&Decoder2to4Enable;
+        displayResult(Decoder2to4Result3, '2to4_decoder_output_3');
+        displayResult(Decoder2to4Result2, '2to4_decoder_output_2');
+        displayResult(Decoder2to4Result1, '2to4_decoder_output_1');
+        displayResult(Decoder2to4Result0, '2to4_decoder_output_0');
+    }
+    //Event listener for 2 to 4 Decoder Input
+    //Input 1
+    document.getElementById('2to4_decoder_input_1').addEventListener('change', function() {
+        Decoder2to4Input1 = this.checked;
+        check2to4DecoderCondition();
+    });
+    //Input 2
+    document.getElementById('2to4_decoder_input_0').addEventListener('change', function() {
+        Decoder2to4Input0 = this.checked;
+        check2to4DecoderCondition();
+    });
+    //Input 1
+    document.getElementById('2to4_decoder_enable').addEventListener('change', function() {
+        Decoder2to4Enable = this.checked;
+        check2to4DecoderCondition();
     });
 }
