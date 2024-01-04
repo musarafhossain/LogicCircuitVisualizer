@@ -1,7 +1,37 @@
+//Switch to on or off curcuit
+{
+    var switchResult = false;
+    //On Off input
+    document.getElementById('ON_OFF_switch').addEventListener('change', function() {
+        switchResult = this.checked;
+        checkANDCondition();
+        checkORCondition();
+        checkNOTCondition();
+        checkNORCondition();
+        checkNANDCondition();
+        checkXORCondition();
+        checkXNORCondition();
+        checkHalfAdderCondition();
+        checkFullAdderCondition();
+        check4bitFullAdderCondition();
+        checkHalfSubtractorCondition();
+        check4bitFullSubtractorCondition();
+        check2x1MultiplexerCondition();
+        check4x1MultiplexerCondition();
+        check8x1MultiplexerCondition();
+        check1x2DeMultiplexerCondition();
+        check1x4DeMultiplexerCondition();
+        check1x8DeMultiplexerCondition();
+        check4to2EncoderCondition();
+        check8to3EncoderCondition();
+
+    });
+}
+
 // Helper function to display result on the webpage
 function displayResult(result, elementId) {
     var element = document.getElementById(elementId);
-    if (result) {
+    if (result&&switchResult) {
         element.classList.add('blue-led-on');
     } else {
         element.classList.remove('blue-led-on');
@@ -801,28 +831,4 @@ function displayResult(result, elementId) {
         Encoder8to3Input7 = this.checked;
         check8to3EncoderCondition();
     });
-}
-
-//initial state
-{
-    checkANDCondition();
-    checkORCondition();
-    checkNOTCondition();
-    checkNORCondition();
-    checkNANDCondition();
-    checkXORCondition();
-    checkXNORCondition();
-    checkHalfAdderCondition();
-    checkFullAdderCondition();
-    check4bitFullAdderCondition();
-    checkHalfSubtractorCondition();
-    check4bitFullSubtractorCondition();
-    check2x1MultiplexerCondition();
-    check4x1MultiplexerCondition();
-    check8x1MultiplexerCondition();
-    check1x2DeMultiplexerCondition();
-    check1x4DeMultiplexerCondition();
-    check1x8DeMultiplexerCondition();
-    check4to2EncoderCondition();
-    check8to3EncoderCondition();
 }
