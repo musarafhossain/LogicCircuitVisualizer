@@ -861,9 +861,58 @@ function displayResult(result, elementId) {
         Decoder2to4Input0 = this.checked;
         check2to4DecoderCondition();
     });
-    //Input 1
+    //Enable Input
     document.getElementById('2to4_decoder_enable').addEventListener('change', function() {
         Decoder2to4Enable = this.checked;
         check2to4DecoderCondition();
+    });
+}
+
+//3 to 8 Decoder Functionalities
+{
+    // Variables to store 3 to 8 Decoder Input
+    var Decoder3to8Input0 = false;
+    var Decoder3to8Input1 = false;
+    var Decoder3to8Input2 = false;
+    var Decoder3to8Enable = false;
+    // Function to check 3 to 8 Decoder conditions and display output
+    function check3to8DecoderCondition() {
+        var Decoder3to8Result7 = Decoder3to8Input0&&Decoder3to8Input1&&Decoder3to8Input2&&Decoder3to8Enable;
+        var Decoder3to8Result6 = (!Decoder3to8Input0)&&Decoder3to8Input1&&Decoder3to8Input2&&Decoder3to8Enable;
+        var Decoder3to8Result5 = Decoder3to8Input0&&(!Decoder3to8Input1)&&Decoder3to8Input2&&Decoder3to8Enable;
+        var Decoder3to8Result4 = (!Decoder3to8Input0)&&(!Decoder3to8Input1)&&Decoder3to8Input2&&Decoder3to8Enable;
+        var Decoder3to8Result3 = Decoder3to8Input0&&Decoder3to8Input1&&(!Decoder3to8Input2)&&Decoder3to8Enable;
+        var Decoder3to8Result2 = (!Decoder3to8Input0)&&Decoder3to8Input1&&(!Decoder3to8Input2)&&Decoder3to8Enable;
+        var Decoder3to8Result1 = Decoder3to8Input0&&(!Decoder3to8Input1)&&(!Decoder3to8Input2)&&Decoder3to8Enable;
+        var Decoder3to8Result0 = (!Decoder3to8Input0)&&(!Decoder3to8Input1)&&(!Decoder3to8Input2)&&Decoder3to8Enable;
+        displayResult(Decoder3to8Result7, '3to8_decoder_output_7');
+        displayResult(Decoder3to8Result6, '3to8_decoder_output_6');
+        displayResult(Decoder3to8Result5, '3to8_decoder_output_5');
+        displayResult(Decoder3to8Result4, '3to8_decoder_output_4');
+        displayResult(Decoder3to8Result3, '3to8_decoder_output_3');
+        displayResult(Decoder3to8Result2, '3to8_decoder_output_2');
+        displayResult(Decoder3to8Result1, '3to8_decoder_output_1');
+        displayResult(Decoder3to8Result0, '3to8_decoder_output_0');
+    }
+    //Event listener for 3 to 8 Decoder Input
+    //Input 1
+    document.getElementById('3to8_decoder_input_2').addEventListener('change', function() {
+        Decoder3to8Input2 = this.checked;
+        check3to8DecoderCondition();
+    });
+    //Input 2
+    document.getElementById('3to8_decoder_input_1').addEventListener('change', function() {
+        Decoder3to8Input1 = this.checked;
+        check3to8DecoderCondition();
+    });
+    //Input 3
+    document.getElementById('3to8_decoder_input_0').addEventListener('change', function() {
+        Decoder3to8Input0 = this.checked;
+        check3to8DecoderCondition();
+    });
+    //Enable Input
+    document.getElementById('3to8_decoder_enable').addEventListener('change', function() {
+        Decoder3to8Enable = this.checked;
+        check3to8DecoderCondition();
     });
 }
