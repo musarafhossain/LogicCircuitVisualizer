@@ -916,3 +916,35 @@ function displayResult(result, elementId) {
         check3to8DecoderCondition();
     });
 }
+
+// Latch Functionalities
+{
+    // Variables to store latch Input
+    var LatchInputR = false;
+    var LatchInputS = false;
+    var LatchResultx;
+    var LatchResulty;
+
+    // Function to check Latch conditions and display output
+    function checkLatchCondition() {
+        LatchResultx = !(LatchInputR || LatchResulty);
+        LatchResulty = !(LatchInputS || LatchResultx);
+        LatchResultx = !(LatchInputR || LatchResulty);
+        LatchResulty = !(LatchInputS || LatchResultx);
+        displayResult(LatchResultx, 'latch_output_x');
+        displayResult(LatchResulty, 'latch_output_y');
+    }
+
+    // Event listener for Latch Input
+    // Input R
+    document.getElementById('latch_input_R').addEventListener('change', function () {
+        LatchInputR = this.checked;
+        checkLatchCondition();
+    });
+
+    // Input S
+    document.getElementById('latch_input_S').addEventListener('change', function () {
+        LatchInputS = this.checked;
+        checkLatchCondition();
+    });
+}

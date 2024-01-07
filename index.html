@@ -1086,6 +1086,48 @@
                 </div>
             </div>
         </div>
+        <div class="gate latch">
+            <h1 class="heading">Latch</h1>
+            <div class="content">
+                <div class="input">
+                    <label for="latch_input_R">
+                        <input type="checkbox" id="latch_input_R">
+                        <span></span>
+                    </label>
+                    <label for="latch_input_S">
+                        <input type="checkbox" id="latch_input_S">
+                        <span></span>
+                    </label>
+                </div>
+                <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg" >
+                    <line x1="0" y1="20" x2="115" y2="20" stroke="black" stroke-width="2" />
+                    <path d="M 100 5 A 15 30 0 0 1 100 70 
+                             A 110 50 0 0 0 189 37.5 
+                             A 110 50 0 0 0 100 5 Z" 
+                             fill="yellow" stroke="black" stroke-width="2"/>
+                    <circle cx="190" cy="37.5" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                    <line x1="195" y1="37.5" x2="300" y2="37.5" stroke="black" stroke-width="2" />
+                    <polyline points="115,53 45,53 45,103 240,197 240,262.5" stroke="black" stroke-width="2" fill="none"/>
+
+                    <line x1="0" y1="280" x2="115" y2="280" stroke="black" stroke-width="2" />
+                    <path d="M 100 295 A 15 30 0 0 0 100 230 
+                             A 110 50 0 0 1 189 262.5 
+                             A 110 50 0 0 1 100 295 Z" 
+                             fill="yellow" stroke="black" stroke-width="2"/>
+                    <circle cx="190" cy="262.5" r="5" fill="yellow" stroke="black" stroke-width="2"/>
+                    <line x1="195" y1="262.5" x2="300" y2="262.5" stroke="black" stroke-width="2" />
+                    <polyline points="115,247 45,247 45,197 240,103 240,37.5" stroke="black" stroke-width="2" fill="none"/>
+                    <text x="10" y="15" fill="black" font-size="20" font-weight="bold">R</text>
+                    <text x="10" y="299" fill="black" font-size="20" font-weight="bold">S</text>
+                    <text x="280" y="284" fill="black" font-size="20" font-weight="bold">Y</text>
+                    <text x="280" y="30" fill="black" font-size="20" font-weight="bold">X</text>
+                </svg>
+                <div class="output">
+                    <div class="output_led" id="latch_output_x"></div>
+                    <div class="output_led" id="latch_output_y"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
